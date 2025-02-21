@@ -23,7 +23,7 @@ public class TrLL{
         }
 
         //Insertion at End of Linked List.
-        public void addEnd(int data){
+        public void addLast(int data){
             Node newNode = new Node(data);
             if(head==null){
                 head = newNode;
@@ -100,11 +100,11 @@ public class TrLL{
         list.addFirst(3);
         list.addFirst(4);
         
-        list.addEnd(5);
+        list.addLast(5);
         list.addFirst(1);
         list.addAtPosition(6, 3);
 
-        list.addEnd(45);
+        list.addLast(45);
         list.setAfter(23, 4);
         list.addAtPosition(7, 4);
         list.printList();
