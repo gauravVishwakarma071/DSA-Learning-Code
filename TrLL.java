@@ -38,7 +38,7 @@ public class TrLL{
         }
 
         //Insert at given position
-        public void addAtPosition(int data,int pos){
+        public void addAtPosition(int data, int pos){
             Node newNode = new Node(data);
             if(head==null){
                 head = newNode;
@@ -53,6 +53,30 @@ public class TrLL{
             newNode.next = currNode.next;
             currNode.next = newNode;
         }
+
+
+        //Set value after a speacific value
+        public void setAfter(int data, int val){
+            Node newNode = new Node(data);
+
+            if(head==null){
+                head = newNode;
+                return;
+            }
+
+            Node temp = head;
+            while(temp!=null){
+
+                if(temp.data==val){
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                    return;
+                }
+                temp = temp.next;
+            }
+
+        }
+
         //print
         public void printList(){
         if(head==null){
@@ -66,9 +90,8 @@ public class TrLL{
         }
         
         System.out.print("End");
-    }
+        }
     
-
 
     public static void main(String args[]){
         
@@ -80,6 +103,10 @@ public class TrLL{
         list.addEnd(5);
         list.addFirst(1);
         list.addAtPosition(6, 3);
+
+        list.addEnd(45);
+        list.setAfter(23, 4);
+        list.addAtPosition(7, 4);
         list.printList();
 
     }
