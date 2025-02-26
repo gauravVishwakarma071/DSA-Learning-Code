@@ -110,7 +110,7 @@ public class TrLL{
             while(temp.next.next!=null){
                 temp = temp.next;
             }
-            temp.next = null;
+            temp.next = temp.next.next;
         }
 
         //Deletion at any specific location
@@ -169,9 +169,9 @@ public class TrLL{
         list.setAfter(23, 4);
         list.addAtPosition(7, 4);
         list.delFirst();
-        list.delLast();
-        list.addAtPosition(10, 1);
         list.delAtPos(0);
+        list.addAtPosition(10, 0);
+        list.delLast();
         list.printList();
 
 
