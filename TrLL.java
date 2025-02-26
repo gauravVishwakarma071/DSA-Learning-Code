@@ -11,6 +11,8 @@ public class TrLL{
             this.next = null;
         }
     }
+        
+        //Insertion operations in Linnked list
         //Insertion at begning position
         public void addFirst(int data){
             Node newNode = new Node(data);
@@ -78,7 +80,7 @@ public class TrLL{
         }
 
 
-        //Deletion in Linked List
+        //Deletion operations in Linked List
 
         //Deletion At Begning
         public void delFirst(){
@@ -106,6 +108,30 @@ public class TrLL{
             temp.next = null;
         }
 
+        //Deletion at any specific location
+        public void delAtPos(int pos){
+            if(head==null){
+                System.out.println("List is empty");
+                return;
+            }
+
+            if(pos==1){
+                head = null;
+                return;
+            }
+
+            Node temp = head;
+            for (int i = 1; i < pos-1 && temp!=null; i++) {
+                temp = temp.next;
+            }
+
+            if(temp==null || temp.next == null){
+                System.out.println("Invailid position");
+                return;
+            }
+            temp.next = temp.next.next;
+        }
+        
         //print
         public void printList(){
         if(head==null){
@@ -139,6 +165,7 @@ public class TrLL{
         list.addAtPosition(7, 4);
         list.delFirst();
         list.delLast();
+        list.delAtPos(3);
         list.printList();
 
     }
