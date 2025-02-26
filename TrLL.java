@@ -30,11 +30,11 @@ public class TrLL{
                 return;
             }
 
-            Node currNode = head;
-            while(currNode.next != null){
-                currNode = currNode.next;
+            Node temp = head;
+            while(temp.next != null){
+                temp = temp.next;
             }
-            currNode.next = newNode;
+            temp.next = newNode;
         }
 
         //Insert at given position
@@ -45,13 +45,13 @@ public class TrLL{
                 return;
             }
 
-            Node currNode = head;
-            for (int i = 0; i < pos - 1 && currNode != null; i++) {
-                currNode = currNode.next;
+            Node temp = head;
+            for (int i = 0; i < pos - 1 && temp != null; i++) {
+                temp = temp.next;
             }
-            if(currNode==null) return;
-            newNode.next = currNode.next;
-            currNode.next = newNode;
+            if(temp==null) return;
+            newNode.next = temp.next;
+            temp.next = newNode;
         }
 
 
