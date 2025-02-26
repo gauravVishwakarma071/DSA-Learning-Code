@@ -46,6 +46,11 @@ public class TrLL{
                 head = newNode;
                 return;
             }
+            if(pos==0){
+                newNode.next = head;
+                head = newNode;
+                return;
+            }
 
             Node temp = head;
             for (int i = 0; i < pos - 1 && temp != null; i++) {
@@ -115,8 +120,8 @@ public class TrLL{
                 return;
             }
 
-            if(pos==1){
-                head = null;
+            if(pos==0){
+                head = head.next;
                 return;
             }
 
@@ -165,8 +170,10 @@ public class TrLL{
         list.addAtPosition(7, 4);
         list.delFirst();
         list.delLast();
-        list.delAtPos(3);
+        list.addAtPosition(10, 1);
+        list.delAtPos(0);
         list.printList();
+
 
     }
 }
