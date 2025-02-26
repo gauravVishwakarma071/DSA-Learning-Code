@@ -77,6 +77,35 @@ public class TrLL{
 
         }
 
+
+        //Deletion in Linked List
+
+        //Deletion At Begning
+        public void delFirst(){
+            if(head==null){
+                System.out.println("List is empty");
+                return;
+            }
+            head = head.next;
+        }
+
+        //Deletion at last node
+        public void delLast(){
+            if(head==null){
+                System.out.println("List is empty");
+                return;
+            }
+            if (head.next == null) {
+                head = null;
+                return;
+            }
+            Node temp = head;
+            while(temp.next.next!=null){
+                temp = temp.next;
+            }
+            temp.next = null;
+        }
+
         //print
         public void printList(){
         if(head==null){
@@ -93,6 +122,7 @@ public class TrLL{
         }
     
 
+        
     public static void main(String args[]){
         
         TrLL list = new TrLL();
@@ -107,6 +137,8 @@ public class TrLL{
         list.addLast(45);
         list.setAfter(23, 4);
         list.addAtPosition(7, 4);
+        list.delFirst();
+        list.delLast();
         list.printList();
 
     }
