@@ -7,15 +7,14 @@ public class Stack_01{
             next = null;
         }
     }
-
     
-        static class Stack{
+    static class Stack{
         public static Node head;
         public static boolean isStackEmpty(){
             return head==null;
         }
 
-            void push(int data){
+        void push(int data){
             Node newNode = new Node(data);
             if(isStackEmpty()){
                 head = newNode;
@@ -25,7 +24,7 @@ public class Stack_01{
             head = newNode;
         }
 
-            int pop(){
+        int pop(){
             if(isStackEmpty()){
                 return -1;
             }
@@ -34,21 +33,20 @@ public class Stack_01{
             return top;
         }
 
-            int peek(){
+        int peek(){
             if(isStackEmpty()){
                 return -1;
             }
             return head.data;
         }
-
     }
+    
     public static void main(String[] args){
         Stack stack = new Stack();
         stack.push(5);
         stack.push(4);
         stack.push(9);
         stack.push(2);
-
 
         while(!Stack.isStackEmpty()){
             System.out.println(stack.pop());
