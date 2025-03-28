@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 class Stack{
     ArrayList<Integer> list = new ArrayList<>();
