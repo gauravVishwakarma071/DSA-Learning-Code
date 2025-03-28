@@ -136,20 +136,36 @@ public class TrLL{
             }
             temp.next = temp.next.next;
         }
+
+        //Searching in LinkedList
+        void search(int data){
+            Node temp = head;
+            int count = 0;
+            while(temp.data!=data){
+                temp = temp.next;
+                count++;
+            }
+            if(temp.data==data){
+                System.out.println(data+" is at Node - "+count);
+            }
+            else{
+                System.out.println(data +" is not in List");
+            }                            
+        }
         
         //print
-        public void printList(){
-        if(head==null){
-            System.out.print("List is empty");
-        }
+        void printList(){ 
+            if(head==null){
+                System.out.print("List is empty");
+            }
 
-        Node currNode = head;
-        while(currNode != null){
-            System.out.print(currNode.data + " -> ");
-            currNode = currNode.next;
-        }
+            Node currNode = head;
+            while(currNode != null){
+                System.out.print(currNode.data + " -> ");
+                currNode = currNode.next;
+            }
         
-        System.out.print("End");
+            System.out.print("End");
         }
     
 
@@ -173,7 +189,7 @@ public class TrLL{
         list.addAtPosition(10, 0);
         list.delLast();
         list.printList();
-
+        list.search(23);
 
     }
 }
