@@ -16,8 +16,8 @@ class Stack{
             System.out.println("Stack is empty");
             return -1;
         }
-        list.remove(list.size()-1);
         int top = list.get(list.size()-1);
+        list.remove(list.size()-1);
         return top;
     }
 
