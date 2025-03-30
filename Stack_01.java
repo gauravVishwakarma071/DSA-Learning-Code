@@ -14,6 +14,7 @@ public class Stack_01{
             return head==null;
         }
 
+        //Push Method
         void push(int data){
             Node newNode = new Node(data);
             if(isStackEmpty()){
@@ -24,6 +25,7 @@ public class Stack_01{
             head = newNode;
         }
 
+        //Pop method
         int pop(){
             if(isStackEmpty()){
                 return -1;
@@ -33,6 +35,7 @@ public class Stack_01{
             return top;
         }
 
+        //Peek method
         int peek(){
             if(isStackEmpty()){
                 return -1;
