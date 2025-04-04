@@ -5,6 +5,8 @@ class Sorting{
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]+" ");
         }
+        System.out.println();
+        System.out.println();
     }
 
     //Bubble sort
@@ -19,7 +21,7 @@ class Sorting{
                 }
             }
         }
-        System.out.print("BY bubble sort");
+        System.out.println("BY bubble sort");
         print(arr);
     }
 
@@ -33,17 +35,37 @@ class Sorting{
                 }
             }
             //swap
-            int temp = arr[min];
-            arr[min] = arr[i];
-            arr[i] = temp;
+            int temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
             
         }
-        System.out.print("BY selection sort");
+        System.out.println("BY selection sort");
+        print(arr);
+    }
+
+    //Insertion sort 
+    static void insertionSort(int[]arr){
+        for (int i = 1; i < arr.length; i++) {
+            int curr = arr[i];
+            int prev = i-1;
+
+            while(prev>=0 && arr[prev] > curr){
+                arr[prev+1] = arr[prev];
+                prev--;
+            }
+            arr[prev+1] = curr;
+            
+        }
+        
+        System.out.println("BY insertion sort");
         print(arr);
     }
     public static void main(String[] args){
         
         int[] arr = {5,4,8,2,6};
+        bubble(arr);
         selectionSort(arr);
+        insertionSort(arr);
     } 
 }
