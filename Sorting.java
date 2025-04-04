@@ -7,6 +7,7 @@ class Sorting{
         }
     }
 
+    //Bubble sort
     static void bubble(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length-i-1; j++) {
@@ -18,11 +19,31 @@ class Sorting{
                 }
             }
         }
+        System.out.print("BY bubble sort");
+        print(arr);
+    }
+
+    //Selection sort 
+    static void selectionSort(int[]arr){
+        for (int i = 0; i < arr.length; i++) {
+            int min = i;
+            for (int j = i+1; j < arr.length; j++) {
+                if(arr[min]>arr[j]){
+                    min = j;
+                }
+            }
+            //swap
+            int temp = arr[min];
+            arr[min] = arr[i];
+            arr[i] = temp;
+            
+        }
+        System.out.print("BY selection sort");
         print(arr);
     }
     public static void main(String[] args){
         
         int[] arr = {5,4,8,2,6};
-        bubble(arr);
+        selectionSort(arr);
     } 
 }
